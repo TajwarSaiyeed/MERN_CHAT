@@ -1,8 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const chats = require("./data/data");
 const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express());
 
 app.get("/", (req, res) => {
   res.send("Server is running on http://localhost:5000");

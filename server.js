@@ -6,23 +6,21 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 const colors = require("colors");
+const userRoutes = require("./routes/userRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 connectDB();
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); // to accept json data
 
 app.get("/", (req, res) => {
   res.send("Server is running on http://localhost:5000");
 });
-app.get("/api/chat", (req, res) => {
-  res.send(chats);
-});
 
-app.get("/api/chat/:id", (req, res) => {
-  const id = req.params.id;
-  const singleChat = chats.find((c) => c._id === id);
-  res.send(singleChat);
-});
+app.use("/api/user", userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`.yellow.bold);

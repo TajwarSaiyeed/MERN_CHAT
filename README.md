@@ -116,11 +116,29 @@ See also the list of [contributors](https://github.com/kylelobo/The-Documentatio
 ```
 Backend
 ├─ .gitignore
+├─ config
+│  ├─ db.js
+│  └─ generateToken.js
+├─ controllers
+│  ├─ chatControllers.js
+│  ├─ messageControllers.js
+│  └─ userControllers.js
 ├─ data
 │  └─ data.js
+├─ middleware
+│  ├─ authMiddleware.js
+│  └─ errorMiddleware.js
+├─ models
+│  ├─ chatModels.js
+│  ├─ messageModel.js
+│  └─ userModel.js
 ├─ package-lock.json
 ├─ package.json
 ├─ README.md
+├─ routes
+│  ├─ chatRoutes.js
+│  ├─ messageRoutes.js
+│  └─ userRoutes.js
 └─ server.js
 
 ```

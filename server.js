@@ -28,12 +28,12 @@ app.use(notFound);
 app.use(errorHandler);
 
 const server = app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`.yellow.bold);
+  console.log(PORT);
 });
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://web-mern-chat-app.vercel.app/",
     methods: ["GET", "POST"],
     pingTimeout: 60000,
   },

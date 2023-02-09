@@ -33,7 +33,7 @@ const server = app.listen(PORT, () => {
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://web-mern-chat-app.vercel.app/",
+    origin: "https://web-mern-chat-app.vercel.app",
     methods: ["GET", "POST"],
     pingTimeout: 60000,
   },

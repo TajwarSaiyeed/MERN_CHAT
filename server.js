@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json()); // to accept json data
 
 app.get("/", (req, res) => {
-  res.send("Server is running on http://localhost:5000");
+  res.send("Server is running on https://mern-chat-server-vf8j.onrender.com");
 });
 
 app.use("/api/user", userRoutes);
